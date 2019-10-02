@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76797AA923442DBC001FE54D /* HeartRateViewController.m */; };
 		76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE987E2342DFEF009EEA47 /* AppDelegate.swift */; };
 		76FE98832342DFEF009EEA47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE98822342DFEF009EEA47 /* ViewController.swift */; };
 		76FE98862342DFEF009EEA47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FE98842342DFEF009EEA47 /* Main.storyboard */; };
 		76FE98882342DFF2009EEA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FE98872342DFF2009EEA47 /* Assets.xcassets */; };
 		76FE988B2342DFF2009EEA47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FE98892342DFF2009EEA47 /* LaunchScreen.storyboard */; };
-		76FE98932342E526009EEA47 /* HeartReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE98922342E526009EEA47 /* HeartReaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heart Rate Detector-Bridging-Header.h"; sourceTree = "<group>"; };
+		76797AA823442DBC001FE54D /* HeartRateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateViewController.h; sourceTree = "<group>"; };
+		76797AA923442DBC001FE54D /* HeartRateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartRateViewController.m; sourceTree = "<group>"; };
 		76FE987B2342DFEF009EEA47 /* Heart Rate Detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heart Rate Detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FE987E2342DFEF009EEA47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76FE98822342DFEF009EEA47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +26,6 @@
 		76FE98872342DFF2009EEA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76FE988A2342DFF2009EEA47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76FE988C2342DFF2009EEA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76FE98922342E526009EEA47 /* HeartReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartReaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,12 @@
 				76FE987E2342DFEF009EEA47 /* AppDelegate.swift */,
 				76FE98822342DFEF009EEA47 /* ViewController.swift */,
 				76FE98842342DFEF009EEA47 /* Main.storyboard */,
-				76FE98922342E526009EEA47 /* HeartReaderViewController.swift */,
+				76797AA823442DBC001FE54D /* HeartRateViewController.h */,
+				76797AA923442DBC001FE54D /* HeartRateViewController.m */,
 				76FE98872342DFF2009EEA47 /* Assets.xcassets */,
 				76FE98892342DFF2009EEA47 /* LaunchScreen.storyboard */,
 				76FE988C2342DFF2009EEA47 /* Info.plist */,
+				76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */,
 			);
 			path = "Heart Rate Detector";
 			sourceTree = "<group>";
@@ -99,6 +103,7 @@
 				TargetAttributes = {
 					76FE987A2342DFEF009EEA47 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -138,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76FE98932342E526009EEA47 /* HeartReaderViewController.swift in Sources */,
+				76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */,
 				76FE98832342DFEF009EEA47 /* ViewController.swift in Sources */,
 				76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */,
 			);
@@ -284,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3EJJ6M7CU;
 				INFOPLIST_FILE = "Heart Rate Detector/Info.plist";
@@ -293,6 +299,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiApps.Heart-Rate-Detector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heart Rate Detector/Heart Rate Detector-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3EJJ6M7CU;
 				INFOPLIST_FILE = "Heart Rate Detector/Info.plist";
@@ -311,6 +320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiApps.Heart-Rate-Detector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heart Rate Detector/Heart Rate Detector-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
