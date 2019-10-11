@@ -15,76 +15,113 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6X4-Pu-D45">
-                                <rect key="frame" x="55" y="114" width="304" height="489.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-ES-8mi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Instant Heart Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE2-Ic-br8">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="25.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-dv-317">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fty-HJ-rvp">
+                                                <rect key="frame" x="30" y="50" width="354" height="489.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Instant Heart Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt3-b5-sBn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="25.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25.5" id="iuh-Yx-Hth"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Instant Heart Rate measures your heart rate by analyzing the color changes in blood flow from the tip of your finger" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="xS2-Ol-QQP">
+                                                        <rect key="frame" x="0.0" y="43.5" width="354" height="103"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="103" id="EZZ-zC-K4R"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstructionImg01" translatesAutoresizingMaskIntoConstraints="NO" id="wRG-HK-Enu">
+                                                        <rect key="frame" x="0.0" y="164.5" width="354" height="179"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="179" id="FBS-jP-gjj"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1EE-c1-Dzx">
+                                                        <rect key="frame" x="0.0" y="361.5" width="354" height="128"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="dtg-Ac-Cm5"/>
+                                                        </constraints>
+                                                        <string key="text">Gently place the tip of your finger on the camera lens so it completely covers the lens. Hold your phone steady throughout the reading.</string>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25.5" id="N1Q-jZ-5wu"/>
+                                            <constraint firstItem="fty-HJ-rvp" firstAttribute="top" secondItem="MAc-dv-317" secondAttribute="top" constant="50" id="0Yl-bR-wrn"/>
+                                            <constraint firstAttribute="trailing" secondItem="fty-HJ-rvp" secondAttribute="trailing" constant="30" id="Ama-R6-Pol"/>
+                                            <constraint firstItem="fty-HJ-rvp" firstAttribute="leading" secondItem="MAc-dv-317" secondAttribute="leading" constant="30" id="gYf-Gk-Ewq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Instant Heart Rate measures your heart rate by analyzing the color changes in blood flow from the tip of your finger" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="jdS-Xp-svu">
-                                        <rect key="frame" x="0.0" y="43.5" width="304" height="103"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-mP-6Bd">
+                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-Ka-YGQ">
+                                                <rect key="frame" x="30" y="56.5" width="354" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="wDH-Eh-lcn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="Start Your Measurement">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="103" id="PQn-aa-4cn"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MsV-Ka-YGQ" secondAttribute="trailing" id="KuX-dD-DKZ"/>
+                                            <constraint firstItem="MsV-Ka-YGQ" firstAttribute="leading" secondItem="KbG-mP-6Bd" secondAttribute="leading" constant="30" id="Zt5-do-UUN"/>
+                                            <constraint firstItem="MsV-Ka-YGQ" firstAttribute="centerY" secondItem="KbG-mP-6Bd" secondAttribute="centerY" id="f96-24-UIg"/>
+                                            <constraint firstItem="MsV-Ka-YGQ" firstAttribute="centerX" secondItem="KbG-mP-6Bd" secondAttribute="centerX" id="nmN-Bu-Znn"/>
                                         </constraints>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstructionImg01" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-c1-JWt">
-                                        <rect key="frame" x="0.0" y="164.5" width="304" height="179"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="179" id="51H-VG-kaL"/>
-                                            <constraint firstAttribute="width" constant="304" id="Pct-qW-2c0"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9DC-Zo-edO">
-                                        <rect key="frame" x="0.0" y="361.5" width="304" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="iYb-nY-0dO"/>
-                                        </constraints>
-                                        <string key="text">Gently place the tip of your finger on the camera lens so it completely covers the lens. Hold your phone steady throughout the reading.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </view>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ue-s0-2va">
-                                <rect key="frame" x="55" y="623.5" width="304" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6kr-Jt-hGC"/>
+                                    <constraint firstItem="KbG-mP-6Bd" firstAttribute="height" secondItem="fyl-ES-8mi" secondAttribute="height" multiplier="0.2" id="118-FU-AWz"/>
+                                    <constraint firstAttribute="trailing" secondItem="MAc-dv-317" secondAttribute="trailing" id="299-R3-NZ4"/>
+                                    <constraint firstItem="MAc-dv-317" firstAttribute="leading" secondItem="fyl-ES-8mi" secondAttribute="leading" id="G9D-gy-AIq"/>
+                                    <constraint firstItem="MAc-dv-317" firstAttribute="top" secondItem="fyl-ES-8mi" secondAttribute="top" id="K3O-4a-fwp"/>
+                                    <constraint firstItem="MAc-dv-317" firstAttribute="height" secondItem="fyl-ES-8mi" secondAttribute="height" multiplier="0.8" id="c2s-qi-r3z"/>
+                                    <constraint firstItem="KbG-mP-6Bd" firstAttribute="leading" secondItem="fyl-ES-8mi" secondAttribute="leading" id="fJ1-jj-caK"/>
+                                    <constraint firstAttribute="trailing" secondItem="KbG-mP-6Bd" secondAttribute="trailing" id="owU-eq-Q0Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="KbG-mP-6Bd" secondAttribute="bottom" id="zQJ-XQ-WCn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Start Your Measurement">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2ue-s0-2va" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7FF-44-17U"/>
-                            <constraint firstItem="2ue-s0-2va" firstAttribute="top" secondItem="6X4-Pu-D45" secondAttribute="bottom" constant="20" id="AfL-3L-Jhs"/>
-                            <constraint firstItem="6X4-Pu-D45" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PqM-kk-fgs"/>
-                            <constraint firstItem="2ue-s0-2va" firstAttribute="width" secondItem="6X4-Pu-D45" secondAttribute="width" id="Vcf-xM-mSr"/>
-                            <constraint firstItem="6X4-Pu-D45" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="c51-mI-7qq"/>
+                            <constraint firstItem="fyl-ES-8mi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2vF-28-rMj"/>
+                            <constraint firstItem="fyl-ES-8mi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IdK-0x-Xee"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fyl-ES-8mi" secondAttribute="bottom" id="Tv2-0h-NEK"/>
+                            <constraint firstItem="fyl-ES-8mi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pQC-4Y-Lbx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="102"/>
+            <point key="canvasLocation" x="-223" y="110"/>
         </scene>
         <!--Heart Rate View Controller-->
         <scene sceneID="GO5-5Y-AGB">
@@ -184,7 +221,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1As-W2-9rz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892.75362318840587" y="101.78571428571428"/>
+            <point key="canvasLocation" x="1157" y="110"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bah-9k-6YI">
+            <objects>
+                <viewController id="1QS-un-esW" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SEO-7f-3dg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-sl-hRZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43e-2M-2Yl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654.5"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-Ft-IRR">
+                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NJ-YD-aBZ">
+                                                <rect key="frame" x="30" y="56.5" width="354" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="h5R-qa-ymJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="Start Your Measurement">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="3NJ-YD-aBZ" firstAttribute="centerX" secondItem="3eX-Ft-IRR" secondAttribute="centerX" id="87d-wL-8Yg"/>
+                                            <constraint firstItem="3NJ-YD-aBZ" firstAttribute="centerY" secondItem="3eX-Ft-IRR" secondAttribute="centerY" id="9RF-0i-BKD"/>
+                                            <constraint firstItem="3NJ-YD-aBZ" firstAttribute="leading" secondItem="3eX-Ft-IRR" secondAttribute="leading" constant="30" id="SCe-BZ-qhD"/>
+                                            <constraint firstAttribute="trailing" secondItem="3NJ-YD-aBZ" secondAttribute="trailing" constant="30" id="YEQ-24-LgC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3eX-Ft-IRR" firstAttribute="height" secondItem="T0a-sl-hRZ" secondAttribute="height" multiplier="0.2" id="96W-00-nwY"/>
+                                    <constraint firstAttribute="bottom" secondItem="3eX-Ft-IRR" secondAttribute="bottom" id="M9u-sZ-z9h"/>
+                                    <constraint firstAttribute="trailing" secondItem="3eX-Ft-IRR" secondAttribute="trailing" id="V4n-R6-alK"/>
+                                    <constraint firstItem="43e-2M-2Yl" firstAttribute="leading" secondItem="T0a-sl-hRZ" secondAttribute="leading" id="ZuX-zY-XZe"/>
+                                    <constraint firstItem="3eX-Ft-IRR" firstAttribute="leading" secondItem="T0a-sl-hRZ" secondAttribute="leading" id="aFO-Gm-9ts"/>
+                                    <constraint firstItem="43e-2M-2Yl" firstAttribute="height" secondItem="T0a-sl-hRZ" secondAttribute="height" multiplier="0.8" id="rNM-u9-etO"/>
+                                    <constraint firstAttribute="trailing" secondItem="43e-2M-2Yl" secondAttribute="trailing" id="tDh-KM-9N7"/>
+                                    <constraint firstItem="43e-2M-2Yl" firstAttribute="top" secondItem="T0a-sl-hRZ" secondAttribute="top" id="udM-VS-ivd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T0a-sl-hRZ" firstAttribute="trailing" secondItem="S8n-1j-iIh" secondAttribute="trailing" id="6Ax-5f-il4"/>
+                            <constraint firstItem="T0a-sl-hRZ" firstAttribute="leading" secondItem="S8n-1j-iIh" secondAttribute="leading" id="JEP-v2-FoL"/>
+                            <constraint firstItem="S8n-1j-iIh" firstAttribute="bottom" secondItem="T0a-sl-hRZ" secondAttribute="bottom" id="qAG-ZG-z6w"/>
+                            <constraint firstItem="T0a-sl-hRZ" firstAttribute="top" secondItem="S8n-1j-iIh" secondAttribute="top" id="sxc-OK-pxR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S8n-1j-iIh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EOe-MG-aAP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="110"/>
         </scene>
     </scenes>
     <resources>
