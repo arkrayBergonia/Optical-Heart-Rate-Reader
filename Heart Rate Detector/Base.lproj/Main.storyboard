@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VUf-dl-gRX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -223,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="1157" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Heart Rate-->
         <scene sceneID="bah-9k-6YI">
             <objects>
                 <viewController id="1QS-un-esW" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,17 +232,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-sl-hRZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43e-2M-2Yl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654.5"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-Ft-IRR">
-                                        <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="615" width="414" height="154"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NJ-YD-aBZ">
-                                                <rect key="frame" x="30" y="56.5" width="354" height="50"/>
+                                                <rect key="frame" x="30" y="52" width="354" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="h5R-qa-ymJ"/>
@@ -284,14 +284,130 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S8n-1j-iIh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Heart Rate" id="K7w-gf-KRU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOe-MG-aAP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="110"/>
+            <point key="canvasLocation" x="520" y="773"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="j02-su-aQ2">
+            <objects>
+                <tabBarController id="VUf-dl-gRX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P16-JU-oK9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1QS-un-esW" kind="relationship" relationship="viewControllers" id="UW1-0v-qEc"/>
+                        <segue destination="cn5-Xl-6qW" kind="relationship" relationship="viewControllers" id="V62-K7-1L0"/>
+                        <segue destination="kS0-5c-fyv" kind="relationship" relationship="viewControllers" id="Fgz-uv-v7K"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4N-Pl-wcN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="773"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="tu8-Mp-TzI">
+            <objects>
+                <viewController id="cn5-Xl-6qW" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVB-kf-fe9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jci-ZD-H2h">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Oj-Dy-ghO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6k-Sl-hlb">
+                                        <rect key="frame" x="0.0" y="615" width="414" height="154"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="t6k-Sl-hlb" secondAttribute="bottom" id="6oP-Fd-iHC"/>
+                                    <constraint firstItem="5Oj-Dy-ghO" firstAttribute="height" secondItem="Jci-ZD-H2h" secondAttribute="height" multiplier="0.8" id="8Iz-dg-5aW"/>
+                                    <constraint firstItem="5Oj-Dy-ghO" firstAttribute="leading" secondItem="Jci-ZD-H2h" secondAttribute="leading" id="ETV-8r-1kE"/>
+                                    <constraint firstItem="t6k-Sl-hlb" firstAttribute="leading" secondItem="Jci-ZD-H2h" secondAttribute="leading" id="Rgx-27-Hgc"/>
+                                    <constraint firstItem="t6k-Sl-hlb" firstAttribute="height" secondItem="Jci-ZD-H2h" secondAttribute="height" multiplier="0.2" id="RsY-cL-Qid"/>
+                                    <constraint firstItem="5Oj-Dy-ghO" firstAttribute="top" secondItem="Jci-ZD-H2h" secondAttribute="top" id="bah-Wo-PkB"/>
+                                    <constraint firstAttribute="trailing" secondItem="t6k-Sl-hlb" secondAttribute="trailing" id="p0e-3Z-aiP"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Oj-Dy-ghO" secondAttribute="trailing" id="wfn-jf-eUx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mgF-67-jbc" firstAttribute="bottom" secondItem="Jci-ZD-H2h" secondAttribute="bottom" id="EOC-XR-4OZ"/>
+                            <constraint firstItem="Jci-ZD-H2h" firstAttribute="trailing" secondItem="mgF-67-jbc" secondAttribute="trailing" id="ebC-J1-IEP"/>
+                            <constraint firstItem="Jci-ZD-H2h" firstAttribute="top" secondItem="mgF-67-jbc" secondAttribute="top" id="loH-vf-eMy"/>
+                            <constraint firstItem="Jci-ZD-H2h" firstAttribute="leading" secondItem="mgF-67-jbc" secondAttribute="leading" id="vtR-Kr-0l9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mgF-67-jbc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" id="aGk-XZ-4Dn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYp-NO-RqG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="773"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="rCi-Dm-NKn">
+            <objects>
+                <viewController id="kS0-5c-fyv" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RFK-1r-5AM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oim-qk-i45">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fK3-Te-Wqg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-I4-82E">
+                                        <rect key="frame" x="0.0" y="615" width="414" height="154"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fK3-Te-Wqg" firstAttribute="top" secondItem="oim-qk-i45" secondAttribute="top" id="2ms-HR-1Wm"/>
+                                    <constraint firstItem="fK3-Te-Wqg" firstAttribute="leading" secondItem="oim-qk-i45" secondAttribute="leading" id="4a4-0d-sg5"/>
+                                    <constraint firstAttribute="trailing" secondItem="NEa-I4-82E" secondAttribute="trailing" id="6RQ-Mg-lzV"/>
+                                    <constraint firstAttribute="bottom" secondItem="NEa-I4-82E" secondAttribute="bottom" id="OHN-di-WTZ"/>
+                                    <constraint firstItem="NEa-I4-82E" firstAttribute="height" secondItem="oim-qk-i45" secondAttribute="height" multiplier="0.2" id="U6Z-rq-oiS"/>
+                                    <constraint firstItem="NEa-I4-82E" firstAttribute="leading" secondItem="oim-qk-i45" secondAttribute="leading" id="VJP-Qn-mjo"/>
+                                    <constraint firstItem="fK3-Te-Wqg" firstAttribute="height" secondItem="oim-qk-i45" secondAttribute="height" multiplier="0.8" id="nrI-Ef-Ksp"/>
+                                    <constraint firstAttribute="trailing" secondItem="fK3-Te-Wqg" secondAttribute="trailing" id="sgZ-Kq-AMu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oim-qk-i45" firstAttribute="top" secondItem="MUZ-G7-uen" secondAttribute="top" id="7rg-ok-SoY"/>
+                            <constraint firstItem="oim-qk-i45" firstAttribute="trailing" secondItem="MUZ-G7-uen" secondAttribute="trailing" id="8gV-Tg-8x1"/>
+                            <constraint firstItem="MUZ-G7-uen" firstAttribute="bottom" secondItem="oim-qk-i45" secondAttribute="bottom" id="JiQ-3B-KXX"/>
+                            <constraint firstItem="oim-qk-i45" firstAttribute="leading" secondItem="MUZ-G7-uen" secondAttribute="leading" id="UZ5-h5-HXs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MUZ-G7-uen"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="Pdn-C4-bYG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3f-b8-ht5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="773"/>
         </scene>
     </scenes>
     <resources>
         <image name="InstructionImg01" width="264.5" height="157.5"/>
-        <image name="black_heart" width="128" height="128"/>
+        <image name="black_heart" width="64" height="64"/>
     </resources>
 </document>
