@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, CURRENT_STATE) {
 };
 
 #define MIN_FRAMES_FOR_FILTER_TO_SETTLE 10
+#define DEFAULT_TIMER 30
 
 @interface HeartRateViewController : UIViewController
 // title stack
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSUInteger, CURRENT_STATE) {
 @property (weak, nonatomic) IBOutlet UIImageView *heartImage;
 @property (weak, nonatomic) IBOutlet UILabel *bpmValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bpmUnitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *startMeasureBtn;
 

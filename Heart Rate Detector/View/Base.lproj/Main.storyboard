@@ -300,6 +300,15 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measuring . . . 60s left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-eJ-Ze3">
+                                                        <rect key="frame" x="0.0" y="295" width="343" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Wzg-Jk-S9H"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="gQ4-8f-W8R"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -362,6 +371,7 @@
                     <connections>
                         <outlet property="bpmUnitLabel" destination="2br-bi-OP1" id="E1w-dH-7ir"/>
                         <outlet property="bpmValueLabel" destination="nh4-Bf-kb4" id="aPe-w3-uIt"/>
+                        <outlet property="countDownLabel" destination="uVl-eJ-Ze3" id="OBh-wL-iua"/>
                         <outlet property="heartImage" destination="8h5-RO-azj" id="Ecg-sZ-i1j"/>
                         <outlet property="heartMainTitleLbl" destination="Qk0-Lr-ZPa" id="0qz-qq-OTG"/>
                         <outlet property="heartSubTitleLbl" destination="Skf-t0-blI" id="PHO-FU-wXV"/>

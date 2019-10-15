@@ -14,6 +14,8 @@
     BOOL showText; //自己个性化加个标识 // add their own personalized identity
     BOOL startDetecting;
     BOOL pausedDetecting;
+    int totalSeconds;
+    NSTimer *timer;
 }
 @property(nonatomic, strong) AVCaptureSession *session;
 @property(nonatomic, strong) AVCaptureDevice *camera;
@@ -51,6 +53,8 @@
 - (IBAction)startBtnPressed:(id)sender {
     
     if (!startDetecting) {
+        [self startCountDown];
+        
         if (!pausedDetecting) {
             // start HeartRate capture
             [self startCameraCapture];
@@ -69,6 +73,37 @@
     startDetecting = !startDetecting ? YES : NO;
 }
 
+
+- (void) startCountDown {
+    self.countDownLabel.hidden = NO;
+    totalSeconds = DEFAULT_TIMER;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+      target:self
+    selector:@selector(timer)
+    userInfo:nil
+     repeats:YES];
+}
+
+- (void)timer {
+    totalSeconds--;
+    _countDownLabel.text = [NSString stringWithFormat:@"Measuring... %0.0ds left", totalSeconds];
+    if ( totalSeconds == 0 ) {
+        [timer invalidate];
+        self.countDownLabel.hidden = YES;
+        
+        NSTimer *quick = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(startBtnPressed:) userInfo:nil repeats:NO];
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Heart Rate"
+                                   message:[NSString stringWithFormat:@"%@ BPM", self.bpmValueLabel.text]
+                                   preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {}];
+
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 
 //start capturing frame
 - (void) startCameraCapture {
