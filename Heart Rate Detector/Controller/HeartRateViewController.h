@@ -10,7 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, CURRENT_STATE) {
+    STATE_PAUSED,
+    STATE_SAMPLING
+};
+
+#define MIN_FRAMES_FOR_FILTER_TO_SETTLE 10
+
 @interface HeartRateViewController : UIViewController
+// title stack
+@property (weak, nonatomic) IBOutlet UILabel *heartMainTitleLbl;
+@property (weak, nonatomic) IBOutlet UILabel *heartSubTitleLbl;
+
+//main view stack
+@property (weak, nonatomic) IBOutlet UIImageView *heartImage;
+@property (weak, nonatomic) IBOutlet UILabel *bpmValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bpmUnitLabel;
+
 
 @end
 

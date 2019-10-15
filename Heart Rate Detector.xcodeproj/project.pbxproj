@@ -80,11 +80,9 @@
 		1D2B2C0123554876005B72AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */,
 				76FE987E2342DFEF009EEA47 /* AppDelegate.swift */,
 				1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */,
 				76FE98872342DFF2009EEA47 /* Assets.xcassets */,
-				76FE988C2342DFF2009EEA47 /* Info.plist */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -108,6 +106,8 @@
 		76FE987D2342DFEF009EEA47 /* Heart Rate Detector */ = {
 			isa = PBXGroup;
 			children = (
+				76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */,
+				76FE988C2342DFF2009EEA47 /* Info.plist */,
 				1D2B2BFE23554852005B72AB /* HeartRate Tools */,
 				1D2B2BFF23554866005B72AB /* View */,
 				1D2B2C002355486F005B72AB /* Controller */,
