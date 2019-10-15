@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, CURRENT_STATE) {
 @property (weak, nonatomic) IBOutlet UILabel *bpmValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bpmUnitLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *startMeasureBtn;
 
 @end
 

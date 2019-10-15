@@ -358,13 +358,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S8n-1j-iIh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Heart Rate" id="K7w-gf-KRU"/>
+                    <tabBarItem key="tabBarItem" title="Heart Rate" image="heart.fill" catalog="system" id="K7w-gf-KRU"/>
                     <connections>
                         <outlet property="bpmUnitLabel" destination="2br-bi-OP1" id="E1w-dH-7ir"/>
                         <outlet property="bpmValueLabel" destination="nh4-Bf-kb4" id="aPe-w3-uIt"/>
                         <outlet property="heartImage" destination="8h5-RO-azj" id="Ecg-sZ-i1j"/>
                         <outlet property="heartMainTitleLbl" destination="Qk0-Lr-ZPa" id="0qz-qq-OTG"/>
                         <outlet property="heartSubTitleLbl" destination="Skf-t0-blI" id="PHO-FU-wXV"/>
+                        <outlet property="startMeasureBtn" destination="3NJ-YD-aBZ" id="vpG-yL-uVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOe-MG-aAP" sceneMemberID="firstResponder"/>
@@ -378,7 +379,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P16-JU-oK9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="1QS-un-esW" kind="relationship" relationship="viewControllers" id="UW1-0v-qEc"/>
@@ -390,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="-223" y="773"/>
         </scene>
-        <!--History-->
+        <!--View Controller-->
         <scene sceneID="tu8-Mp-TzI">
             <objects>
                 <viewController id="cn5-Xl-6qW" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
@@ -432,13 +434,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mgF-67-jbc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="aGk-XZ-4Dn"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="aGk-XZ-4Dn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYp-NO-RqG" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1219" y="773"/>
         </scene>
-        <!--Settings-->
+        <!--View Controller-->
         <scene sceneID="rCi-Dm-NKn">
             <objects>
                 <viewController id="kS0-5c-fyv" customClass="ViewController" customModule="Heart_Rate_Detector" customModuleProvider="target" sceneMemberID="viewController">
@@ -480,7 +482,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MUZ-G7-uen"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Pdn-C4-bYG"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="Pdn-C4-bYG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3f-b8-ht5" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,6 +492,7 @@
     <resources>
         <image name="InstructionImg01" width="264.5" height="157.5"/>
         <image name="black_heart" width="64" height="64"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="love" width="512" height="512"/>
     </resources>
 </document>

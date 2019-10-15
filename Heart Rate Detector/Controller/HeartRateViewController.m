@@ -12,6 +12,8 @@
 #import "Fiter.h"
 @interface HeartRateViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>{
     BOOL showText; //自己个性化加个标识 // add their own personalized identity
+    BOOL startDetecting;
+    BOOL pausedDetecting;
 }
 @property(nonatomic, strong) AVCaptureSession *session;
 @property(nonatomic, strong) AVCaptureDevice *camera;
@@ -39,17 +41,40 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *ivc = [storyboard instantiateViewControllerWithIdentifier:@"introVC"];
     [self presentViewController:ivc animated:YES completion:nil];
-    //[self resume];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self pause];
+    
 }
 
 - (IBAction)startBtnPressed:(id)sender {
-    // start HeartRate capture
-    [self startCameraCapture];
+    if (startDetecting) {
+        startDetecting = NO;
+        pausedDetecting = YES;
+        
+        [self.startMeasureBtn setTitle:@"Start Your Measurement" forState:UIControlStateNormal];
+        
+        [self pause];
+        [self resetLabel];
+    } else {
+        startDetecting = YES;
+
+        [self.startMeasureBtn setTitle:@"Cancel Measurement" forState:UIControlStateNormal];
+        
+        if (pausedDetecting) {
+            [self resume];
+        } else {
+            // start HeartRate capture
+            [self startCameraCapture];
+        }
+    }
+}
+
+- (void)resetLabel {
+    self.heartMainTitleLbl.text = @"Heart Rate Measurement";
+    self.heartSubTitleLbl.text = @"Press button below to start";
+    self.bpmValueLabel.text = @"00";
 }
 
 //start capturing frame
@@ -148,7 +173,7 @@
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
-//网上找的算法 // find online algorithm
+// find online algorithm
 void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     float min, max, delta;
     min = MIN( r, MIN(g, b ));
