@@ -41,8 +41,10 @@
     
     self.pulseDetector = [[PulseDetector alloc]init];
     
+}
+- (IBAction)startBtnPressed:(id)sender {
+    // start HeartRate capture
     [self startCameraCapture];
-
 }
 
 //start capturing frame
