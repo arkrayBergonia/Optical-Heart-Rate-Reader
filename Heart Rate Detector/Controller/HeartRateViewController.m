@@ -49,33 +49,26 @@
 }
 
 - (IBAction)startBtnPressed:(id)sender {
-    if (startDetecting) {
-        startDetecting = NO;
-        pausedDetecting = YES;
-        
-        [self.startMeasureBtn setTitle:@"Start Your Measurement" forState:UIControlStateNormal];
-        
-        [self pause];
-        [self resetLabel];
-    } else {
-        startDetecting = YES;
-
-        [self.startMeasureBtn setTitle:@"Cancel Measurement" forState:UIControlStateNormal];
-        
-        if (pausedDetecting) {
-            [self resume];
-        } else {
+    
+    if (!startDetecting) {
+        if (!pausedDetecting) {
             // start HeartRate capture
             [self startCameraCapture];
+        } else {
+            [self resume];
         }
+    } else {
+        [self pause];
+        pausedDetecting = YES;
+        self.heartMainTitleLbl.text = @"Heart Rate Measurement";
+        self.heartSubTitleLbl.text = @"Press button below to start";
+        self.bpmValueLabel.text = @"00";
     }
+    
+    [self.startMeasureBtn setTitle: startDetecting ? @"Start Your Measurement" : @"Cancel Measurement" forState:UIControlStateNormal];
+    startDetecting = !startDetecting ? YES : NO;
 }
 
-- (void)resetLabel {
-    self.heartMainTitleLbl.text = @"Heart Rate Measurement";
-    self.heartSubTitleLbl.text = @"Press button below to start";
-    self.bpmValueLabel.text = @"00";
-}
 
 //start capturing frame
 - (void) startCameraCapture {

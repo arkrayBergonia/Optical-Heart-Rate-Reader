@@ -224,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1As-W2-9rz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="110"/>
+            <point key="canvasLocation" x="519" y="110"/>
         </scene>
         <!--Heart Rate-->
         <scene sceneID="bah-9k-6YI">
@@ -240,8 +240,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43e-2M-2Yl">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-4j-E6J">
-                                                <rect key="frame" x="35.5" y="70" width="343" height="298"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-4j-E6J">
+                                                <rect key="frame" x="35.5" y="70" width="343" height="295"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cM0-lf-k2U" userLabel="Label Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
@@ -268,7 +268,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azY-sC-NJ0" userLabel="Heart Menu Stack View">
-                                                        <rect key="frame" x="50.5" y="138" width="242" height="160"/>
+                                                        <rect key="frame" x="50.5" y="135" width="242" height="160"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="8h5-RO-azj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
