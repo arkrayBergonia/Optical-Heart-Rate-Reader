@@ -41,6 +41,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2B2BFE23554852005B72AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D2B2BFF23554866005B72AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76FE98842342DFEF009EEA47 /* Main.storyboard */,
+				76FE98892342DFF2009EEA47 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D2B2C002355486F005B72AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76797AA823442DBC001FE54D /* HeartRateViewController.h */,
+				76797AA923442DBC001FE54D /* HeartRateViewController.m */,
+				76FE98822342DFEF009EEA47 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D2B2C0123554876005B72AB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */,
+				76FE987E2342DFEF009EEA47 /* AppDelegate.swift */,
+				1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */,
+				76FE98872342DFF2009EEA47 /* Assets.xcassets */,
+				76FE988C2342DFF2009EEA47 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		76FE98722342DFEF009EEA47 = {
 			isa = PBXGroup;
 			children = (
@@ -60,16 +98,10 @@
 		76FE987D2342DFEF009EEA47 /* Heart Rate Detector */ = {
 			isa = PBXGroup;
 			children = (
-				76FE987E2342DFEF009EEA47 /* AppDelegate.swift */,
-				76FE98822342DFEF009EEA47 /* ViewController.swift */,
-				76FE98842342DFEF009EEA47 /* Main.storyboard */,
-				76797AA823442DBC001FE54D /* HeartRateViewController.h */,
-				76797AA923442DBC001FE54D /* HeartRateViewController.m */,
-				76FE98872342DFF2009EEA47 /* Assets.xcassets */,
-				76FE98892342DFF2009EEA47 /* LaunchScreen.storyboard */,
-				76FE988C2342DFF2009EEA47 /* Info.plist */,
-				76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */,
-				1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */,
+				1D2B2BFE23554852005B72AB /* Model */,
+				1D2B2BFF23554866005B72AB /* View */,
+				1D2B2C002355486F005B72AB /* Controller */,
+				1D2B2C0123554876005B72AB /* Support Files */,
 			);
 			path = "Heart Rate Detector";
 			sourceTree = "<group>";
