@@ -24,16 +24,6 @@
 
 @implementation HeartRateViewController
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self resume];
-}
-
--(void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self pause];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,6 +32,21 @@
     self.pulseDetector = [[PulseDetector alloc]init];
     
 }
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *ivc = [storyboard instantiateViewControllerWithIdentifier:@"introVC"];
+    [self presentViewController:ivc animated:YES completion:nil];
+    //[self resume];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self pause];
+}
+
 - (IBAction)startBtnPressed:(id)sender {
     // start HeartRate capture
     [self startCameraCapture];
