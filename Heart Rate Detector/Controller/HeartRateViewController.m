@@ -35,6 +35,8 @@
     
     self.pulseDetector = [[PulseDetector alloc]init];
     
+    self.startMeasureBtn.layer.cornerRadius = 10;
+    self.startMeasureBtn.clipsToBounds = YES;
 }
 
 -(void) viewDidAppear:(BOOL)animated {

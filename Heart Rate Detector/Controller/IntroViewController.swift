@@ -10,9 +10,13 @@ import UIKit
 
 class IntroViewController: UIViewController {
 
+    @IBOutlet weak var mainButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.mainButton.layer.cornerRadius = 10
+        self.mainButton.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
