@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2B2C0623554B41005B72AB /* Fiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0323554B41005B72AB /* Fiter.m */; };
+		1D2B2C0723554B41005B72AB /* PulseDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0523554B41005B72AB /* PulseDetector.mm */; };
 		1DAFE6F62350684D009EC5E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */; };
 		76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76797AA923442DBC001FE54D /* HeartRateViewController.m */; };
 		76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE987E2342DFEF009EEA47 /* AppDelegate.swift */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2B2C0223554B40005B72AB /* PulseDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseDetector.h; sourceTree = "<group>"; };
+		1D2B2C0323554B41005B72AB /* Fiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fiter.m; sourceTree = "<group>"; };
+		1D2B2C0423554B41005B72AB /* Fiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fiter.h; sourceTree = "<group>"; };
+		1D2B2C0523554B41005B72AB /* PulseDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PulseDetector.mm; sourceTree = "<group>"; };
 		1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heart Rate Detector-Bridging-Header.h"; sourceTree = "<group>"; };
 		76797AA823442DBC001FE54D /* HeartRateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateViewController.h; sourceTree = "<group>"; };
@@ -41,11 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D2B2BFE23554852005B72AB /* Model */ = {
+		1D2B2BFE23554852005B72AB /* HeartRate Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B2C0423554B41005B72AB /* Fiter.h */,
+				1D2B2C0323554B41005B72AB /* Fiter.m */,
+				1D2B2C0223554B40005B72AB /* PulseDetector.h */,
+				1D2B2C0523554B41005B72AB /* PulseDetector.mm */,
 			);
-			path = Model;
+			path = "HeartRate Tools";
 			sourceTree = "<group>";
 		};
 		1D2B2BFF23554866005B72AB /* View */ = {
@@ -98,7 +108,7 @@
 		76FE987D2342DFEF009EEA47 /* Heart Rate Detector */ = {
 			isa = PBXGroup;
 			children = (
-				1D2B2BFE23554852005B72AB /* Model */,
+				1D2B2BFE23554852005B72AB /* HeartRate Tools */,
 				1D2B2BFF23554866005B72AB /* View */,
 				1D2B2C002355486F005B72AB /* Controller */,
 				1D2B2C0123554876005B72AB /* Support Files */,
@@ -181,7 +191,9 @@
 				76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */,
 				76FE98832342DFEF009EEA47 /* ViewController.swift in Sources */,
 				76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */,
+				1D2B2C0723554B41005B72AB /* PulseDetector.mm in Sources */,
 				1DAFE6F62350684D009EC5E1 /* SceneDelegate.swift in Sources */,
+				1D2B2C0623554B41005B72AB /* Fiter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
