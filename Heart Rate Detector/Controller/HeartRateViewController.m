@@ -14,6 +14,7 @@
     BOOL showText; //自己个性化加个标识 // add their own personalized identity
     BOOL startDetecting;
     BOOL pausedDetecting;
+    BOOL cameraPressed;
     int totalSeconds;
     NSTimer *timer;
 }
@@ -87,8 +88,12 @@
 }
 
 - (void)timer {
-    totalSeconds--;
-    _countDownLabel.text = [NSString stringWithFormat:NSLocalizedString(@"countDownText", nil), totalSeconds];
+    
+    if (cameraPressed) {
+        totalSeconds--;
+        _countDownLabel.text = [NSString stringWithFormat:NSLocalizedString(@"countDownText", nil), totalSeconds];
+    }
+    
     if ( totalSeconds == 0 ) {
         [timer invalidate];
         self.countDownLabel.hidden = YES;
@@ -331,6 +336,8 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     
     // display 100 a distance equal Loading
     if (distance == 100) showText = NO;
+    
+    cameraPressed = (distance == 100) ? YES : NO;
     
     self.heartSubTitleLbl.text = (self.currentState!=STATE_PAUSED) ? [NSString stringWithFormat:NSLocalizedString(@"setFingerOnCameraText", nil),distance] : NSLocalizedString(@"pressToStartSubTitle", nil);
     
