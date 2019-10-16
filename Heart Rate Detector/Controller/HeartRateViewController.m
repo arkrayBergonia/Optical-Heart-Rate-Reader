@@ -95,15 +95,17 @@
         
         NSTimer *quick = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(startBtnPressed:) userInfo:nil repeats:NO];
         
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Heart Rate"
-                                   message:[NSString stringWithFormat:@"%@ BPM", self.bpmValueLabel.text]
-                                   preferredStyle:UIAlertControllerStyleAlert];
+        if (![self.bpmValueLabel.text isEqual: @"00"]) {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Heart Rate"
+                                       message:[NSString stringWithFormat:@"%@ BPM", self.bpmValueLabel.text]
+                                       preferredStyle:UIAlertControllerStyleAlert];
 
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                       handler:^(UIAlertAction * action) {}];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                           handler:^(UIAlertAction * action) {}];
 
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
 }
 
