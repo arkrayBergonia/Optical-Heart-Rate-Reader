@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Heart Rate Detector
+
+  Created by Francis Jemuel Bergonia on 16/10/2019.
+  Copyright © 2019 Jay Bergonia. All rights reserved.
+*/
+
+// HeartRateViewController text
+heartRateMeasureTitle = "心拍数の測定";
+pressToStartSubTitle = "下のボタンを押すと起動します";
+startYourMeasureText = "あなたの測定を開始";
+cancelYourMeasureText = "測定をキャンセル";
+countDownText = "測定... %0.0d 残り秒";
+heartRateResultText = "心拍数";
+placeFingerText = "カメラに指を置きます";
+detectingPulseText = "パルスを検出";
+setFingerOnCameraText = "カメラに指を設定します: %ld%%";
+
+// IntrViewController text
+firstIntroText = "それは完全にレンズをカバーして静かにカメラのレンズに指の先端を配置します。読書を通じて着実にあなたの携帯電話を保持します。";
+secondText = "インスタント心拍数は、あなたの指の先端から血流の色の変化を分析することによって、あなたの心拍数を測定します";

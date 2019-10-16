@@ -10,6 +10,7 @@
 		1D2B2C0623554B41005B72AB /* Fiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0323554B41005B72AB /* Fiter.m */; };
 		1D2B2C0723554B41005B72AB /* PulseDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0523554B41005B72AB /* PulseDetector.mm */; };
 		1D2B2C0923556C50005B72AB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0823556C50005B72AB /* IntroViewController.swift */; };
+		1D5EA7272356B7D100000EBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D5EA7292356B7D100000EBB /* Localizable.strings */; };
 		1DAFE6F62350684D009EC5E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */; };
 		76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76797AA923442DBC001FE54D /* HeartRateViewController.m */; };
 		76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE987E2342DFEF009EEA47 /* AppDelegate.swift */; };
@@ -25,6 +26,11 @@
 		1D2B2C0423554B41005B72AB /* Fiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fiter.h; sourceTree = "<group>"; };
 		1D2B2C0523554B41005B72AB /* PulseDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PulseDetector.mm; sourceTree = "<group>"; };
 		1D2B2C0823556C50005B72AB /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		1D5EA7212356B37100000EBB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1D5EA7242356B49200000EBB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		1D5EA7262356B4AC00000EBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1D5EA7282356B7D100000EBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1D5EA72A2356B7D700000EBB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heart Rate Detector-Bridging-Header.h"; sourceTree = "<group>"; };
 		76797AA823442DBC001FE54D /* HeartRateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateViewController.h; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		1D2B2C0123554876005B72AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D5EA7292356B7D100000EBB /* Localizable.strings */,
 				76FE987E2342DFEF009EEA47 /* AppDelegate.swift */,
 				1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */,
 				76FE98872342DFF2009EEA47 /* Assets.xcassets */,
@@ -162,6 +169,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 76FE98722342DFEF009EEA47;
 			productRefGroup = 76FE987C2342DFEF009EEA47 /* Products */;
@@ -179,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FE988B2342DFF2009EEA47 /* LaunchScreen.storyboard in Resources */,
+				1D5EA7272356B7D100000EBB /* Localizable.strings in Resources */,
 				76FE98882342DFF2009EEA47 /* Assets.xcassets in Resources */,
 				76FE98862342DFEF009EEA47 /* Main.storyboard in Resources */,
 			);
@@ -204,10 +213,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1D5EA7292356B7D100000EBB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D5EA7282356B7D100000EBB /* en */,
+				1D5EA72A2356B7D700000EBB /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		76FE98842342DFEF009EEA47 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				76FE98852342DFEF009EEA47 /* Base */,
+				1D5EA7242356B49200000EBB /* ja */,
+				1D5EA7262356B4AC00000EBB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -216,6 +236,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				76FE988A2342DFF2009EEA47 /* Base */,
+				1D5EA7212356B37100000EBB /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -227,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -287,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

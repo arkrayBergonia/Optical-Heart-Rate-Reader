@@ -122,112 +122,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="firstIntroTextView" destination="xS2-Ol-QQP" id="EoK-Nm-MI9"/>
                         <outlet property="mainButton" destination="MsV-Ka-YGQ" id="hG5-gU-RQC"/>
+                        <outlet property="secondIntroTextView" destination="1EE-c1-Dzx" id="nCO-TU-Pmv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-223" y="110"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GO5-5Y-AGB">
-            <objects>
-                <viewController id="QIy-6u-FDP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7oe-ge-mo1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RZK-Ga-1Gj" userLabel="Label Stack View">
-                                <rect key="frame" x="35.5" y="101" width="343" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate Measurement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Up6-p2-Jhe">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="ebN-N6-sUU"/>
-                                            <constraint firstAttribute="height" constant="50" id="sp8-hU-Qdl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
-                                        <color key="textColor" red="0.71979345034246578" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place your finger on camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-M0-WvG">
-                                        <rect key="frame" x="0.0" y="50" width="343" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="QMA-ar-eKg"/>
-                                            <constraint firstAttribute="height" constant="50" id="cwu-qD-A9p"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-gi-NQq" userLabel="Heart Menu Stack View">
-                                <rect key="frame" x="96" y="239" width="222" height="130"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_heart" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-IK-XN9">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="130" id="9jL-OT-ptp"/>
-                                            <constraint firstAttribute="width" constant="130" id="zyk-6y-4im"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r1O-w2-TmL">
-                                        <rect key="frame" x="138" y="0.0" width="84" height="130"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-Rj-uFR">
-                                                <rect key="frame" x="0.0" y="0.0" width="84" height="80"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="ghE-YC-Y8n"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-xM-9FT">
-                                                <rect key="frame" x="0.0" y="80" width="84" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="EcT-Hv-hU8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="37"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbc-GB-5dG">
-                                <rect key="frame" x="55" y="619" width="304" height="50"/>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="060-Dw-G8w"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ilb-Ng-FFq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Stop Your Measurement">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Hbc-GB-5dG" firstAttribute="leading" secondItem="ORH-Iz-XiM" secondAttribute="leading" constant="55" id="07h-tk-8ip"/>
-                            <constraint firstItem="Nfz-gi-NQq" firstAttribute="centerX" secondItem="7oe-ge-mo1" secondAttribute="centerX" id="KY0-Sk-2tY"/>
-                            <constraint firstItem="Hbc-GB-5dG" firstAttribute="centerX" secondItem="7oe-ge-mo1" secondAttribute="centerX" id="XAw-q2-sQR"/>
-                            <constraint firstItem="RZK-Ga-1Gj" firstAttribute="top" secondItem="ORH-Iz-XiM" secondAttribute="top" constant="57" id="e7p-PM-8UX"/>
-                            <constraint firstItem="Hbc-GB-5dG" firstAttribute="top" secondItem="Nfz-gi-NQq" secondAttribute="bottom" constant="250" id="knS-sQ-rf7"/>
-                            <constraint firstItem="Nfz-gi-NQq" firstAttribute="top" secondItem="RZK-Ga-1Gj" secondAttribute="bottom" constant="38" id="rYn-wb-SzD"/>
-                            <constraint firstItem="ORH-Iz-XiM" firstAttribute="trailing" secondItem="Hbc-GB-5dG" secondAttribute="trailing" constant="55" id="yjU-Xw-jfo"/>
-                            <constraint firstItem="RZK-Ga-1Gj" firstAttribute="centerX" secondItem="7oe-ge-mo1" secondAttribute="centerX" id="ywz-SG-Bn2"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ORH-Iz-XiM"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="C15-ks-g4v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1As-W2-9rz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="519" y="110"/>
         </scene>
         <!--Heart Rate-->
         <scene sceneID="bah-9k-6YI">
@@ -504,7 +406,6 @@
     </scenes>
     <resources>
         <image name="InstructionImg01" width="264.5" height="157.5"/>
-        <image name="black_heart" width="64" height="64"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="love" width="512" height="512"/>
     </resources>

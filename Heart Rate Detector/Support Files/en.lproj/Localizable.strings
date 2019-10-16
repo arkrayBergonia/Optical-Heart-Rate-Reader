@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Heart Rate Detector
+
+  Created by Francis Jemuel Bergonia on 16/10/2019.
+  Copyright © 2019 Jay Bergonia. All rights reserved.
+*/
+
+// HeartRateViewController text
+heartRateMeasureTitle = "Heart Rate Measurement";
+pressToStartSubTitle = "Press button below to start";
+startYourMeasureText = "Start Your Measurement";
+cancelYourMeasureText = "Cancel Measurement";
+countDownText = "Measuring... %0.0ds left";
+heartRateResultText = "Your Heart Rate";
+placeFingerText = "Place your finger on camera";
+detectingPulseText = "Detecting Pulse";
+setFingerOnCameraText = "Set finger on camera: %ld%%";
+
+// IntrViewController text
+firstIntroText = "Gently place the tip of your finger on the camera lens so it completely covers the lens. Hold your phone steady throughout the reading.";
+secondText = "Instant Heart Rate measures your heart rate by analyzing the color changes in blood flow from the tip of your finger";

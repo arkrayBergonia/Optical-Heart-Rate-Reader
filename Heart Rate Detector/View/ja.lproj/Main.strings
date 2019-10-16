@@ -1,0 +1,33 @@
+
+/* Class = "UITextView"; text = "Gently place the tip of your finger on the camera lens so it completely covers the lens. Hold your phone steady throughout the reading."; ObjectID = "1EE-c1-Dzx"; */
+"1EE-c1-Dzx.text" = "それは完全にレンズをカバーして静かにカメラのレンズに指の先端を配置します。読書を通じて着実にあなたの携帯電話を保持します。";
+
+/* Class = "UILabel"; text = "bpm"; ObjectID = "2br-bi-OP1"; */
+"2br-bi-OP1.text" = "bpm";
+
+/* Class = "UIButton"; normalTitle = "Start Your Measurement"; ObjectID = "3NJ-YD-aBZ"; */
+"3NJ-YD-aBZ.normalTitle" = "あなたの測定を開始";
+
+/* Class = "UITabBarItem"; title = "Heart Rate"; ObjectID = "K7w-gf-KRU"; */
+"K7w-gf-KRU.title" = "心拍数";
+
+/* Class = "UIButton"; normalTitle = "Okay, I understand"; ObjectID = "MsV-Ka-YGQ"; */
+"MsV-Ka-YGQ.normalTitle" = "はいわかりました";
+
+/* Class = "UILabel"; text = "Heart Rate Measurement"; ObjectID = "Qk0-Lr-ZPa"; */
+"Qk0-Lr-ZPa.text" = "心拍数の測定";
+
+/* Class = "UILabel"; text = "Press button below to start"; ObjectID = "Skf-t0-blI"; */
+"Skf-t0-blI.text" = "下のボタンを押すと起動します";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "nh4-Bf-kb4"; */
+"nh4-Bf-kb4.text" = "00";
+
+/* Class = "UILabel"; text = "Welcome to Instant Heart Rate"; ObjectID = "qt3-b5-sBn"; */
+"qt3-b5-sBn.text" = "インスタント心拍数へようこそ";
+
+/* Class = "UILabel"; text = "Measuring . . . 30s left"; ObjectID = "uVl-eJ-Ze3"; */
+"uVl-eJ-Ze3.text" = "測定。 。 。左30代";
+
+/* Class = "UITextView"; text = "Instant Heart Rate measures your heart rate by analyzing the color changes in blood flow from the tip of your finger"; ObjectID = "xS2-Ol-QQP"; */
+"xS2-Ol-QQP.text" = "インスタント心拍数は、あなたの指の先端から血流の色の変化を分析することによって、あなたの心拍数を測定します";

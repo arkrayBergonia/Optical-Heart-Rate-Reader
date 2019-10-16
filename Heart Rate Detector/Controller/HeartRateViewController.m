@@ -66,12 +66,12 @@
     } else {
         [self pause];
         pausedDetecting = YES;
-        self.heartMainTitleLbl.text = @"Heart Rate Measurement";
-        self.heartSubTitleLbl.text = @"Press button below to start";
+        self.heartMainTitleLbl.text = NSLocalizedString(@"heartRateMeasureTitle", nil);
+        self.heartSubTitleLbl.text = NSLocalizedString(@"pressToStartSubTitle", nil);
         self.bpmValueLabel.text = @"00";
     }
     
-    [self.startMeasureBtn setTitle: startDetecting ? @"Start Your Measurement" : @"Cancel Measurement" forState:UIControlStateNormal];
+    [self.startMeasureBtn setTitle: startDetecting ? NSLocalizedString(@"startYourMeasureText", nil) : NSLocalizedString(@"cancelYourMeasureText", nil) forState:UIControlStateNormal];
     startDetecting = !startDetecting ? YES : NO;
 }
 
@@ -88,7 +88,7 @@
 
 - (void)timer {
     totalSeconds--;
-    _countDownLabel.text = [NSString stringWithFormat:@"Measuring... %0.0ds left", totalSeconds];
+    _countDownLabel.text = [NSString stringWithFormat:NSLocalizedString(@"countDownText", nil), totalSeconds];
     if ( totalSeconds == 0 ) {
         [timer invalidate];
         self.countDownLabel.hidden = YES;
@@ -96,7 +96,7 @@
         NSTimer *quick = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(startBtnPressed:) userInfo:nil repeats:NO];
         
         if (![self.bpmValueLabel.text isEqual: @"00"]) {
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Heart Rate"
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"heartRateResultText", nil)
                                        message:[NSString stringWithFormat:@"%@ BPM", self.bpmValueLabel.text]
                                        preferredStyle:UIAlertControllerStyleAlert];
 
@@ -249,7 +249,7 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
    
         dispatch_async(dispatch_get_main_queue(), ^{
             // callback or notify the main thread is refreshed,
-            self.heartMainTitleLbl.text=@"Place your finger on camera";
+            self.heartMainTitleLbl.text=NSLocalizedString(@"placeFingerText", nil);
         });
 
     } else {
@@ -262,7 +262,7 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
             //notify the main thread refresh
             dispatch_async(dispatch_get_main_queue(), ^{
                 // callback or notify the main thread is refreshed,
-                self.heartMainTitleLbl.text = @"Detecting Pulse";
+                self.heartMainTitleLbl.text = NSLocalizedString(@"detectingPulseText", nil);
             });
         }
     }
@@ -332,7 +332,7 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     // display 100 a distance equal Loading
     if (distance == 100) showText = NO;
     
-    self.heartSubTitleLbl.text = (self.currentState!=STATE_PAUSED) ? [NSString stringWithFormat:@"Set finger on camera: %ld%%",distance] : @"Press button below to start";
+    self.heartSubTitleLbl.text = (self.currentState!=STATE_PAUSED) ? [NSString stringWithFormat:NSLocalizedString(@"setFingerOnCameraText", nil),distance] : NSLocalizedString(@"pressToStartSubTitle", nil);
     
     // If stopped and do nothing
     if(self.currentState==STATE_PAUSED) return;
