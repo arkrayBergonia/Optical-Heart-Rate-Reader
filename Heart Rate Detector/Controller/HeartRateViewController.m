@@ -332,7 +332,7 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     // display 100 a distance equal Loading
     if (distance == 100) showText = NO;
     
-    self.heartSubTitleLbl.text = [NSString stringWithFormat:@"Set finger on camera: %ld%%",distance];
+    self.heartSubTitleLbl.text = (self.currentState!=STATE_PAUSED) ? [NSString stringWithFormat:@"Set finger on camera: %ld%%",distance] : @"Press button below to start";
     
     // If stopped and do nothing
     if(self.currentState==STATE_PAUSED) return;
