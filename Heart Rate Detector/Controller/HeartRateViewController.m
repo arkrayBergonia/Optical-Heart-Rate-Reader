@@ -123,13 +123,6 @@
     // get the default camera equipment
     self.camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
-    //Open torch mode - no it can not detect a pulse
-    if([self.camera isTorchModeSupported:AVCaptureTorchModeOn]) {
-        [self.camera lockForConfiguration:nil];
-        self.camera.torchMode=AVCaptureTorchModeOn;
-        [self.camera unlockForConfiguration];
-    }
-    
     // Create a AVCaptureInput camera equipment
     NSError *error=nil;
     AVCaptureInput* cameraInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.camera error:&error];
@@ -165,6 +158,13 @@
     
     // Camera status
     self.currentState=STATE_SAMPLING;
+    
+    //Open torch mode - no it can not detect a pulse, but it enhances capture rate
+    if([self.camera isTorchModeSupported:AVCaptureTorchModeOn]) {
+        [self.camera lockForConfiguration:nil];
+        self.camera.torchMode=AVCaptureTorchModeOn;
+        [self.camera unlockForConfiguration];
+    }
     
     // Stop program
     [UIApplication sharedApplication].idleTimerDisabled = YES;
