@@ -43,14 +43,20 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *ivc = [storyboard instantiateViewControllerWithIdentifier:@"introVC"];
-    [self presentViewController:ivc animated:YES completion:nil];
+    // show intro VC
+    [self segueToVC:@"introVC"];
+    
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+}
+
+- (void)segueToVC:(NSString *)controllerID {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *ivc = [storyboard instantiateViewControllerWithIdentifier:controllerID];
+    [self presentViewController:ivc animated:YES completion:nil];
 }
 
 - (IBAction)startBtnPressed:(id)sender {
