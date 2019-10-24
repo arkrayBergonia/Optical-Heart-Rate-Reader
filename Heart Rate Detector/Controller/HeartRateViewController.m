@@ -12,6 +12,7 @@
 #import "Fiter.h"
 @interface HeartRateViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>{
     BOOL showText; //自己个性化加个标识 // add their own personalized identity
+    BOOL blinkStatus;
     BOOL startDetecting;
     BOOL pausedDetecting;
     BOOL cameraPressed;
@@ -102,6 +103,7 @@
     
     if ( totalSeconds == 0 ) {
         [timer invalidate];
+        [self.heartImage setImage:[UIImage imageNamed:@"digital_heart"]];
         self.countDownLabel.hidden = YES;
         
         NSTimer *quick = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(startBtnPressed:) userInfo:nil repeats:NO];
@@ -117,6 +119,14 @@
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
+    }
+    
+    if(blinkStatus == NO){
+        [self.heartImage setImage:[UIImage imageNamed:@"red_heart"]];
+        blinkStatus = YES;
+    }else {
+        [self.heartImage setImage:[UIImage imageNamed:@"digital_heart"]];
+        blinkStatus = NO;
     }
 }
 

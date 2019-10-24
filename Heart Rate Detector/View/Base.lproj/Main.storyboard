@@ -181,7 +181,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="azY-sC-NJ0" userLabel="Heart Menu Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="233" height="160"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="8h5-RO-azj">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digital_heart" translatesAutoresizingMaskIntoConstraints="NO" id="8h5-RO-azj">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="160" id="Ohk-a6-Ewd"/>
@@ -567,7 +567,7 @@
     <resources>
         <image name="InstructionImg01" width="264.5" height="157.5"/>
         <image name="InstructionImg02" width="375" height="321.5"/>
+        <image name="digital_heart" width="512" height="512"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="love" width="512" height="512"/>
     </resources>
 </document>
