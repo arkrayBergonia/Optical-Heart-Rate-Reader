@@ -6,6 +6,12 @@
 //  Copyright (c) 2015 Pubnub. All rights reserved.
 //
 
+/*
+This filter class is a simple band pass filter that removes any DC component and any high frequency noise
+このフィルタクラスは、任意のDC成分と任意の高周波ノイズを除去する単純なバンドパスフィルタであります
+source: https://www.pubnub.com/blog/tutorial-realtime-ios-heart-rate-monitor-dashboard/
+*/
+
 #import "Fiter.h"
 
 #define GAIN    1.894427025e+01

@@ -6,6 +6,14 @@
 //  Copyright (c) 2015 Pubnub. All rights reserved.
 //
 
+/*
+The PulseDetector class defines the functions addNewValue( ) and getAverage( ) which are used to get the pulse rate from valid frames out of 10 frames per second and derive the average reading for a one minute interval.
+ 
+ PulseDetectorクラスは、毎秒10個のフレームのうち、有効なフレームから脈拍数を取得し、1分間隔の平均読取値を導出するために使用されるaddNewValue（）とgetAverage（）関数を定義します。
+ 
+source: https://www.pubnub.com/blog/tutorial-realtime-ios-heart-rate-monitor-dashboard/
+*/
+
 #import <Foundation/Foundation.h>
 
 #define MAX_PERIODS_TO_STORE 20

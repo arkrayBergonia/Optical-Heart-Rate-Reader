@@ -11,7 +11,7 @@
 #import "PulseDetector.h"
 #import "Fiter.h"
 @interface HeartRateViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>{
-    BOOL showText; //自己个性化加个标识 // add their own personalized identity
+    BOOL showText;
     BOOL blinkStatus;
     BOOL startDetecting;
     BOOL pausedDetecting;
@@ -44,7 +44,7 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    // show intro VC
+    // イントロのVCを表示 || show intro VC
     [self segueToVC:@"introVC"];
     
 }
@@ -66,13 +66,13 @@
         [self startCountDown];
         
         if (!pausedDetecting) {
-            // start HeartRate capture
+            // 心拍数のキャプチャを開始 || start HeartRate capture
             [self startCameraCapture];
         } else {
             [self resume];
         }
     } else {
-        [self pause];
+        [self pause]; // 心拍数のキャプチャを一時停止 || pause HeartRate capture
         pausedDetecting = YES;
         self.heartMainTitleLbl.text = NSLocalizedString(@"heartRateMeasureTitle", nil);
         self.heartSubTitleLbl.text = NSLocalizedString(@"pressToStartSubTitle", nil);
@@ -95,7 +95,8 @@
 }
 
 - (void)timer {
-    
+    // this method updates the labels depending on the status of heart rate capture
+    // この方法は、心拍数のキャプチャの状態に応じてラベルを更新します
     if (cameraPressed) {
         totalSeconds--;
         _countDownLabel.text = [NSString stringWithFormat:NSLocalizedString(@"countDownText", nil), totalSeconds];
@@ -130,62 +131,61 @@
     }
 }
 
-//start capturing frame
+// //フレームのキャプチャを開始 || start capturing frame
 - (void) startCameraCapture {
     
-    // Create AVCapture
+    // AVCaptureを作成します。 || Create AVCapture
     self.session = [[AVCaptureSession alloc]init];
     
-    // get the default camera equipment
+    // デフォルトのカメラデバイスを取得 || get the default camera device
     self.camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
-    // Create a AVCaptureInput camera equipment
+    // AVCaptureInputのccameraデバイスを作成します。 || Create a AVCaptureInput ccamera device
     NSError *error=nil;
     AVCaptureInput* cameraInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.camera error:&error];
     if (cameraInput == nil) {
         NSLog(@"Error to create camera capture:%@",error);
     }
     
-    // set the output
+    // 出力を設定します || set the output
     AVCaptureVideoDataOutput* videoOutput = [[AVCaptureVideoDataOutput alloc] init];
     
-    // create a queue run captured
+    // 撮影したキューの実行を作成します || create a queue run captured
     dispatch_queue_t captureQueue=dispatch_queue_create("captureQueue", NULL);
     
-    // set their own commission to capture
+    // キャプチャするために、独自の委員会を設定 || set their own commission to capture
     [videoOutput setSampleBufferDelegate:self queue:captureQueue];
     
-    //Configure pixel format
+    // ピクセルフォーマットを設定します || Configure pixel format
     videoOutput.videoSettings = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA], (id)kCVPixelBufferPixelFormatTypeKey, nil];
     
-    // minimum acceptable frame rate to 10 fps
+    // 10 fpsに最小許容フレームレート || minimum acceptable frame rate to 10 fps
     videoOutput.minFrameDuration=CMTimeMake(1, 10);
     
-    
-    // size of the frame - minimum frame (size available)
+    // フレームの大きさ - 私たちは可能な最小のフレームサイズを使用します || size of the frame - we'll use the smallest frame size available
     [self.session setSessionPreset:AVCaptureSessionPresetLow];
     
-    // add an input and output
+    // 入力と出力を追加 || add an input and output
     [self.session addInput:cameraInput];
     [self.session addOutput:videoOutput];
     
-    //start up
+    // 起動 || start up
     [self.session startRunning];
     
-    // Camera status
+    // カメラのステータス：我々は今、カメラからサンプリングしています || Camera status:  we're now sampling from the camera
     self.currentState=STATE_SAMPLING;
     
-    //Open torch mode - no it can not detect a pulse, but it enhances capture rate
+    // オープントーチモード - いいえ、それはパルスを検出することはできませんが、それは捕獲率を向上 || Open torch mode - no it can not detect a pulse, but it enhances capture rate
     if([self.camera isTorchModeSupported:AVCaptureTorchModeOn]) {
         [self.camera lockForConfiguration:nil];
         self.camera.torchMode=AVCaptureTorchModeOn;
         [self.camera unlockForConfiguration];
     }
     
-    // Stop program
+    // 寝てからアプリを停止 || stop the app from sleeping
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    //Timer executed once every 0.1 seconds
+    // タイマーは、一回ごとに0.1秒を実行しました || Timer executed once every 0.1 seconds
     [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
 
 }
@@ -199,7 +199,7 @@
 -(void) pause {
     if(self.currentState==STATE_PAUSED) return;
     
-    //Turn off the flash
+    //トーチをオフにします || Turn off the torch
     if([self.camera isTorchModeSupported:AVCaptureTorchModeOn]) {
         [self.camera lockForConfiguration:nil];
         self.camera.torchMode=AVCaptureTorchModeOff;
@@ -207,14 +207,14 @@
     }
     self.currentState=STATE_PAUSED;
     
-    // exit the program or turn off the background
+    // 電話機がアイドル状態の場合、アプリケーションがスリープ状態に行きましょう || let the application go to sleep if the phone is idle
     [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
 
 -(void) resume {
     if(self.currentState!=STATE_PAUSED) return;
     
-    // turn off the flash
+    // トーチをオンにします || turn on the torch
     if([self.camera isTorchModeSupported:AVCaptureTorchModeOn]) {
         [self.camera lockForConfiguration:nil];
         self.camera.torchMode=AVCaptureTorchModeOn;
@@ -222,11 +222,13 @@
     }
     self.currentState=STATE_SAMPLING;
     
-    // exit the program or turn off the background
+    // 寝てからアプリを停止 || stop the app from sleeping
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
 // find online algorithm
+// r,g,b values are from 0 to 1 // h = [0,360], s = [0,1], v = [0,1]
+//    if s == 0, then h = -1 (undefined)
 void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     float min, max, delta;
     min = MIN( r, MIN(g, b ));
@@ -252,30 +254,27 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
         *h += 360;
 }
 
-//processing video frames
+// ビデオフレームを処理します || processing video frames
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     
-    // judge to stop and do not do any processing
+    // 裁判官が停止すると、何も処理を行いません。 || judge to stop and do not do any processing
     if(self.currentState==STATE_PAUSED) {
         
-        // reset our frame counter
+        // 私たちのフレームカウンタをリセット || reset our frame counter
         self.validFrameCounter = 0;
         return;
     }
     
     
-    // Analyzing fluctuations in blood // Get Value
+    // 血液中の分析変動は値を取得します ||Analyzing fluctuations in blood // Get Value
     if (self.validFrameCounter == 0) {
         
-   
         dispatch_async(dispatch_get_main_queue(), ^{
             // callback or notify the main thread is refreshed,
             self.heartMainTitleLbl.text=NSLocalizedString(@"placeFingerText", nil);
         });
 
     } else {
-        
-        
         // get the data (may be used to display a progress bar or electrocardiogram) ********
         NSLog(@"int:%d",self.validFrameCounter);
         //*********
@@ -288,23 +287,21 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
         }
     }
     
-    // image buffer
+    // 画像バッファ || image buffer
     CVImageBufferRef cvimgRef = CMSampleBufferGetImageBuffer(sampleBuffer);
     
-    // Lock image buffer
+    // ロック画像バッファ|| Lock image buffer
     CVPixelBufferLockBaseAddress(cvimgRef,0);
     
-    //Access to data
+    // データへのアクセス || Access to data
     size_t width=CVPixelBufferGetWidth(cvimgRef);
-    
     size_t height=CVPixelBufferGetHeight(cvimgRef);
     
-    // Acquiring an image bytes
+    // 画像バイトを取得します || Acquiring an image bytes
     uint8_t *buf=(uint8_t *) CVPixelBufferGetBaseAddress(cvimgRef);
-    
     size_t bprow=CVPixelBufferGetBytesPerRow(cvimgRef);
     
-    //The average value of the rgb frame
+    // フレームの平均RGB値を引き出し || and pull out the average rgb value of the frame
     float r=0,g=0,b=0;
     for(int y=0; y<height; y++) {
         for(int x=0; x<width*4; x+=4) {
@@ -318,30 +315,30 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     g/=255*(float) (width*height);
     b/=255*(float) (width*height);
     
-    // to convert from rgb hsv colourspace
+    // RGB、HSV colourspaceへ変換します || to convert from rgb hsv colourspace
     float h,s,v;
     
     RGBtoHSV(r, g, b, &h, &s, &v);
     
-    // do a check to see if a finger is placed in the camera
+    // //指がカメラ内に配置されているかどうかを確認するためのチェックを行います || do a check to see if a finger is placed in the camera
     if(s>0.5 && v>0.5) {
         
-        // increase the effective number of frames
+        // フレームの有効数を増やします || increase the effective number of frames
         self.validFrameCounter++;
         
-        // tone value filter, the filter is a simple band-pass filter to eliminate high frequency noise and any DC component
+        // //階調値フィルタ、フィルタは、高周波ノイズと、任意のDC成分を除去するための単純なバンドパスフィルタであります || tone value filter, the filter is a simple band-pass filter to eliminate high frequency noise and any DC component
         float filtered=[self.fiter processValue:h];
         
-        
+        // 私たちは、フィルタが安定するのに十分なフレームを収集してきましたか？ || have we collected enough frames for the filter to settle?
         if(self.validFrameCounter > MIN_FRAMES_FOR_FILTER_TO_SETTLE) {
             
-            // Add a new value into a pulse detector
+            // パルス検出器に新しい値を追加します。 || Add a new value into a pulse detector
             [self.pulseDetector addNewValue:filtered atTime:CACurrentMediaTime()];
         }
     } else {
         self.validFrameCounter = 0;
         
-        // clear pulse detector - we only need to do this once
+        // クリアパルス検出器 - 私たちは一度だけこれを実行する必要があります || clear pulse detector - we only need to do this once
         [self.pulseDetector reset];
     }
 }
@@ -350,17 +347,16 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     
     NSInteger distance =  MIN(100, (100 * self.validFrameCounter)/MIN_FRAMES_FOR_FILTER_TO_SETTLE);
     
-    // display 100 a distance equal Loading
     if (distance == 100) showText = NO;
     
     cameraPressed = (distance == 100) ? YES : NO;
     
     self.heartSubTitleLbl.text = (self.currentState!=STATE_PAUSED) ? [NSString stringWithFormat:NSLocalizedString(@"setFingerOnCameraText", nil),distance] : NSLocalizedString(@"pressToStartSubTitle", nil);
     
-    // If stopped and do nothing
+    // if we're paused then do nothing
     if(self.currentState==STATE_PAUSED) return;
     
-    // The average period of the pulse repetition frequency of the pulse detector to give
+    // パルス検出器からのパルスレートの平均期間を取得 || get the average period of the pulse rate from the pulse detector
     float avePeriod=[self.pulseDetector getAverage];
     
     
@@ -370,20 +366,16 @@ void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) {
     if(avePeriod==INVALID_PULSE_PERIOD) {
         
         // no value available temporarily to do post-processing may be used
-
+        // 後処理を行うことが一時的に利用可能な値を使用することはできません
         
     } else {
         
-        showText = YES;// displays heart rate value
-        
-        // show value is out there
+        // ショーBPM値 || Show BPM Value
+        showText = YES;
         float pulse=60.0/avePeriod;
    
         dispatch_async(dispatch_get_main_queue(), ^{
-            // Callback or notify the main thread is refreshing
             self.bpmValueLabel.text=[NSString stringWithFormat:@"%0.0f", pulse];
-            
-
         });
         
     }
