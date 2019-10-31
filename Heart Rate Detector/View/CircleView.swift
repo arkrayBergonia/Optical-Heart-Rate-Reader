@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class CircleView: UIView {
 
-    @IBInspectable var borderColor: CGColor = UIColor.systemRed.cgColor
+    @IBInspectable var borderColor: CGColor = UIColor.red.cgColor
     @IBInspectable var backColor: CGColor = UIColor.white.cgColor
     
     override func draw(_ rect: CGRect) {
