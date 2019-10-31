@@ -12,6 +12,8 @@
 		1D2B2C0723554B41005B72AB /* PulseDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0523554B41005B72AB /* PulseDetector.mm */; };
 		1D2B2C0923556C50005B72AB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B2C0823556C50005B72AB /* IntroViewController.swift */; };
 		1D5EA7272356B7D100000EBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D5EA7292356B7D100000EBB /* Localizable.strings */; };
+		1D9486EC236ACD54007AA855 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9486EB236ACD54007AA855 /* CircleView.swift */; };
+		1D9486EE236ACD68007AA855 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9486ED236ACD68007AA855 /* RoundedButton.swift */; };
 		1DAFE6F62350684D009EC5E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */; };
 		76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76797AA923442DBC001FE54D /* HeartRateViewController.m */; };
 		76FE987F2342DFEF009EEA47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE987E2342DFEF009EEA47 /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 		1D5EA7262356B4AC00000EBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1D5EA7282356B7D100000EBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D5EA72A2356B7D700000EBB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1D9486EB236ACD54007AA855 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		1D9486ED236ACD68007AA855 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		1DAFE6F52350684C009EC5E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		76797AA723442DBC001FE54D /* Heart Rate Detector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heart Rate Detector-Bridging-Header.h"; sourceTree = "<group>"; };
 		76797AA823442DBC001FE54D /* HeartRateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateViewController.h; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			children = (
 				76FE98842342DFEF009EEA47 /* Main.storyboard */,
 				76FE98892342DFF2009EEA47 /* LaunchScreen.storyboard */,
+				1D9486EB236ACD54007AA855 /* CircleView.swift */,
+				1D9486ED236ACD68007AA855 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9486EC236ACD54007AA855 /* CircleView.swift in Sources */,
+				1D9486EE236ACD68007AA855 /* RoundedButton.swift in Sources */,
 				76797AAA23442DBC001FE54D /* HeartRateViewController.m in Sources */,
 				76FE98832342DFEF009EEA47 /* ViewController.swift in Sources */,
 				1D2B2C0923556C50005B72AB /* IntroViewController.swift in Sources */,

@@ -75,7 +75,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-mP-6Bd">
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-Ka-YGQ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-Ka-YGQ" customClass="RoundedButton" customModule="Heart_Rate_Detector" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="56.5" width="354" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -146,7 +146,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="654.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-4j-E6J">
-                                                <rect key="frame" x="35.5" y="40" width="343" height="415"/>
+                                                <rect key="frame" x="35.5" y="40" width="343" height="435"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cM0-lf-k2U" userLabel="Label Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
@@ -172,14 +172,14 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-Ia-fYE">
-                                                        <rect key="frame" x="31.5" y="135" width="280" height="280"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-Ia-fYE" customClass="CircleView" customModule="Heart_Rate_Detector" customModuleProvider="target">
+                                                        <rect key="frame" x="21.5" y="135" width="300" height="300"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AxK-9u-2P4">
-                                                                <rect key="frame" x="23.5" y="60" width="233" height="160"/>
+                                                                <rect key="frame" x="35" y="70" width="230.5" height="160"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="azY-sC-NJ0" userLabel="Heart Menu Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="233" height="160"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="230.5" height="160"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digital_heart" translatesAutoresizingMaskIntoConstraints="NO" id="8h5-RO-azj">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -189,22 +189,24 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-VQ-5lj">
-                                                                                <rect key="frame" x="159" y="0.0" width="74" height="160"/>
+                                                                                <rect key="frame" x="159" y="0.0" width="71.5" height="160"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nh4-Bf-kb4">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="74" height="100"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="100" id="AiO-6U-g3g"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2br-bi-OP1">
-                                                                                        <rect key="frame" x="0.0" y="100" width="74" height="60"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2br-bi-OP1">
+                                                                                        <rect key="frame" x="0.0" y="100" width="71.5" height="60"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="60" id="i6A-OX-xCJ"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="37"/>
+                                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -212,20 +214,21 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measuring . . . 30s left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-eJ-Ze3">
-                                                                        <rect key="frame" x="24.5" y="0.0" width="184.5" height="50"/>
+                                                                        <rect key="frame" x="23" y="0.0" width="184.5" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="Wzg-Jk-S9H"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="280" id="1gX-b9-xev"/>
-                                                            <constraint firstAttribute="height" constant="280" id="CwE-TL-ynV"/>
+                                                            <constraint firstAttribute="width" constant="300" id="1gX-b9-xev"/>
+                                                            <constraint firstAttribute="height" constant="300" id="CwE-TL-ynV"/>
                                                             <constraint firstItem="AxK-9u-2P4" firstAttribute="centerY" secondItem="6Bc-Ia-fYE" secondAttribute="centerY" id="K1F-pE-cJW"/>
                                                             <constraint firstItem="AxK-9u-2P4" firstAttribute="centerX" secondItem="6Bc-Ia-fYE" secondAttribute="centerX" id="Lsy-XJ-WkP"/>
                                                         </constraints>
@@ -242,9 +245,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-Ft-IRR">
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NJ-YD-aBZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NJ-YD-aBZ" customClass="RoundedButton" customModule="Heart_Rate_Detector" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="56.5" width="354" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="h5R-qa-ymJ"/>
                                                 </constraints>
@@ -507,7 +510,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eE-Mh-Wci">
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="163.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-Q3-drA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-Q3-drA" customClass="RoundedButton" customModule="Heart_Rate_Detector" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="56.5" width="354" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
